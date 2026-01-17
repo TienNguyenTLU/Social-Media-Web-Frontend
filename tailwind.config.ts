@@ -12,6 +12,7 @@ module.exports = {
         "background-dark": "#1A0505",
         "surface-light": "#FFFFFF",
         "surface-dark": "#2D0F0F",
+        "button-bg": "rose-600"
       },
       fontFamily: {
         poppins: ['var(--font-poppins)', 'sans-serif'],
