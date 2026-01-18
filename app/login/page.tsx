@@ -11,18 +11,18 @@ export default function LoginPage() {
     <main className="relative w-full h-screen flex items-center justify-center p-4 overflow-hidden bg-background-dark antialiased">
         <div className="absolute inset-0 bg-gradient-to-br from-[#231018]/90 via-[#231018]/70 to-primary/20 z-10" />
         <Image
-          src="/Background_Login.png" // Using your local Bg.png
+          src="/Background_Login.png"
           alt="Cyberpunk skyline"
           fill
           quality={100}
-          className="object-cover object-center blur-xs"
+          className="object-cover object-center blur-xs opacity-90"
           priority
         />
 
-      <div className="relative z-20 w-full max-w-[440px] flex flex-col backdrop-blur-xs bg-surface-dark/60 border border-white/10 rounded-lg shadow-2xl overflow-hidden p-6 sm:p-10">
+      <div className="relative z-20 w-full max-w-[440px] flex flex-col backdrop-blur-xs bg-surface-dark/100 border border-white/20 rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10">
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="h-14 w-14 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center mb-5 text-primary shadow-[0_0_15px_rgba(244,37,123,0.3)]">
-            <DraftingCompass className="text-3xl" />
+          <div className="h-14 w-14 rounded-full bg-white border border-white flex items-center justify-center mb-5 text-primary shadow-[0_0_15px_rgba(244,37,123,0.3)]">
+            <DraftingCompass className="text-3xl text-rose-600" />
           </div>
           <h1 className="text-white tracking-tight text-3xl font-bold leading-tight mb-2">Welcome Back!</h1>
           <p className="text-gray-300 text-base font-normal">Ready to tap in? Enter your deets below.</p>
@@ -63,12 +63,12 @@ export default function LoginPage() {
                 className="absolute inset-y-0 right-0 pr-4 flex items-center text-text-placeholder hover:text-white transition-colors cursor-pointer"
               >
                 <span className="material-symbols-outlined text-xl">
-                  {showPassword ? <Eye /> : <EyeClosed />}
+                  {showPassword ? <Eye className='text-white' /> : <EyeClosed className='text-white' />}
                 </span>
               </button>
             </div>
             <div className="flex justify-end mt-1">
-              <a href="#" className="text-text-placeholder text-sm hover:text-primary hover:underline transition-colors">Forgot Password?</a>
+              <a href="#" className="text-white text-sm hover:text-primary hover:underline transition-colors">Forgot Password?</a>
             </div>
           </div>
 
@@ -94,7 +94,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="mt-8 text-center">
           <p className="text-gray-400 text-sm">
-            New here? <a href="#" className="text-primary font-bold hover:underline ml-1">Join the Fam</a>
+            New here? <a href="/signup" className="text-primary font-bold hover:underline ml-1">Join the Fam</a>
           </p>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function LoginPage() {
 
 function SocialButton({ icon, label, isApple = false }: { icon: string, label: string, isApple?: boolean }) {
   return (
-    <button className="flex items-center justify-center h-12 rounded-full bg-surface-dark border border-input-border hover:bg-input-bg hover:border-primary/50 transition-all gap-2 group">
+    <button className="flex items-center justify-center h-12 rounded-full bg-surface-dark border border-white hover:bg-input-bg hover:border-primary/50 transition-all gap-2 group">
       {isApple ? (
         <span className="material-symbols-outlined text-white text-xl">ios</span>
       ) : (
