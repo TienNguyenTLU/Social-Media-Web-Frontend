@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter, Poppins } from 'next/font/google';
-import './globals.css';
+import { Poppins } from 'next/font/google';
+import { DarkModeProvider } from './context/DarkModeContext';
+
 const poppins = Poppins({ 
   weight: ['500', '700', '800'], 
   subsets: ['latin'], 
@@ -20,11 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${poppins.variable} antialiased`}
       >
-        {children}
+        <DarkModeProvider>
+          {children}
+        </DarkModeProvider>
       </body>
     </html>
   );

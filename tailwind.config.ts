@@ -2,6 +2,9 @@ import { Poppins } from "next/font/google";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  content : [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}"
+  ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -9,10 +12,9 @@ module.exports = {
         primary: "#E63946",
         secondary: "#FB8500",
         "background-light": "#FFF7ED",
-        "background-dark": "#1A0505",
+        "background-dark": "#0f0f11",
         "surface-light": "#FFFFFF",
-        "surface-dark": "#2D0F0F",
-        "button-bg": "rose-600"
+        "surface-dark": "#2D0F0F"
       },
       fontFamily: {
         poppins: ['var(--font-poppins)', 'sans-serif'],
