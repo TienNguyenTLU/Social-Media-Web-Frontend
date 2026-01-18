@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌇 Skyline Social Media - Sunset City Interface
+Skyline là giao diện nền tảng mạng xã hội dành cho thế hệ Gen-Z với phong cách thiết kế Glassmorphism (kính mờ) hiện đại, kết hợp cùng dải màu Sunset (hoàng hôn) rực rỡ. Dự án tập trung vào trải nghiệm người dùng mượt mà và giao diện bắt mắt.
 
-## Getting Started
+✨ Tính năng nổi bật
+Giao diện Glassmorphism: Hiệu ứng làm mờ kính cường độ cao với backdrop-blur.
 
-First, run the development server:
+Aesthetic UI: Hệ thống màu sắc được tinh chỉnh (Sunset Pink, Deep Purple).
 
-```bash
+Responsive Design: Tối ưu hóa hoàn hảo cho mọi thiết bị (Mobile, Tablet, Desktop).
+
+Trải nghiệm người dùng: Toggle ẩn/hiện mật khẩu, hiệu ứng hover mượt mà và validation thân thiện.
+
+🛠 Công nghệ sử dụng
+Dự án được xây dựng dựa trên hệ sinh thái React hiện đại nhất:
+
+Framework: Next.js (App Router)
+
+Styling: Tailwind CSS
+
+Font: Spline Sans (Tối ưu qua next/font)
+
+Icons: Material Symbols Outlined
+
+Công cụ khác: Lucide React (tùy chọn), Tailwind Merge, Class Variance Authority.
+
+🚀 Cài đặt dự án
+Để chạy dự án này ở môi trường local, hãy làm theo các bước sau:
+
+Clone dự án:
+
+Bash
+
+git clone https://github.com/your-username/skyline-social-media.git
+cd skyline-social-media
+Cài đặt thư viện:
+
+Bash
+
+npm install
+# hoặc
+yarn install
+Chạy server phát triển:
+
+Bash
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Xem kết quả: Mở trình duyệt và truy cập: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 Liên kết quan trọng
+🌐 Live Demo: [Đang cập nhật...]
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+⚙️ API Backend: [Đang cập nhật...]
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🎨 Thiết kế Figma: [Link thiết kế (nếu có)]
 
-## Learn More
+📂 Cấu trúc thư mục chính
+Plaintext
 
-To learn more about Next.js, take a look at the following resources:
+├── app/
+│   ├── (auth)/          # Quản lý đăng nhập/đăng ký
+│   ├── layout.tsx       # Layout tổng thể (Fonts, Metadata)
+│   ├── page.tsx         # Trang chủ chính
+│   └── globals.css      # Cấu hình Tailwind & Custom Scrollbar
+├── components/          # Các UI components tái sử dụng
+├── public/              # Hình ảnh, tài nguyên tĩnh
+└── tailwind.config.ts   # Cấu hình màu sắc (Sunset palette)
+📝 Ghi chú phát triển
+Dự án hiện đang trong quá trình hoàn thiện các tính năng:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[x] Giao diện đăng ký (Gen-Z style)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[ ] Chế độ Dark/Light mode tự động
 
-## Deploy on Vercel
+[ ] Tích hợp API đăng nhập bằng Google/Apple
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[ ] Trang Feed cá nhân
