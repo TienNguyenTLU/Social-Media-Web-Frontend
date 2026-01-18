@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { DraftingCompass, Eye, EyeClosed, Lock, LogIn, Mail } from 'lucide-react';
@@ -94,7 +94,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="mt-8 text-center">
           <p className="text-gray-400 text-sm">
-            New here? <a href="/signup" className="text-primary font-bold hover:underline ml-1">Join the Fam</a>
+            New here? <Link href="/signup" className="text-primary font-bold hover:underline ml-1">Join the Fam</Link>
           </p>
         </div>
       </div>

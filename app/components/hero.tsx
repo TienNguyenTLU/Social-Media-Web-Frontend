@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Hero() {
   return (
     <div className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
@@ -13,12 +14,12 @@ export default function Hero() {
         </p>
 
         <div className="flex justify-center gap-4 mb-8">
-          <button className="px-6 py-3 rounded-full bg-rose-600 hover:bg-rose-500 text-white font-semibold shadow-lg shadow-rose-600/30 transition-colors">
+          <Link href="/signup" className="px-6 py-3 rounded-full bg-rose-600 hover:bg-rose-500 text-white font-semibold shadow-lg shadow-rose-600/30 transition-colors">
             Join the Fam
-          </button>
-          <button className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur font-semibold transition-colors">
+          </Link>
+          <Link href="/login" className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur font-semibold transition-colors">
             Slide In
-          </button>
+          </Link>
         </div>
 
         <div className="flex items-center justify-center gap-3 text-gray-300">
