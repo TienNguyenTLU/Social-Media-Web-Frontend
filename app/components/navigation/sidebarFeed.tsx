@@ -4,20 +4,20 @@ import { Bell, Compass, DraftingCompass, Home, MessageSquare, Moon, Settings, Su
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDarkMode } from "@/app/context/DarkModeContext";
-
+import { useLanguage } from "@/app/context/LanguageContext";
 const navLinks = [
-  { name: "Home", href: "/feed", icon: Home },
-  { name: "Explore", href: "/explore", icon: Compass },
-  { name: "Notifications", href: "/notifications", icon: Bell, badge: true },
-  { name: "Messages", href: "/messages", icon: MessageSquare },
-  { name: "Profile", href: "/profile", icon: User },
-  { name: "Settings", href: "/settings", icon: Settings },
+  { name: "home", href: "/feed", icon: Home },
+  { name: "explore", href: "/explore", icon: Compass },
+  { name: "notifications", href: "/notifications", icon: Bell, badge: true },
+  { name: "messages", href: "/messages", icon: MessageSquare },
+  { name: "profile", href: "/profile", icon: User },
+  { name: "settings", href: "/setting", icon: Settings },
 ];
 
 export default function SidebarFeed() {
   const pathname = usePathname();
   const { isDark, toggleTheme } = useDarkMode();
-
+  const { t, isVie, toggleLanguage } = useLanguage();
   return (
     <aside className={`w-64 h-screen p-6 flex flex-col font-poppins border-r transition-colors duration-300
       ${isDark ? 'bg-[#0d0d0d] text-white border-white/5' : 'bg-white text-gray-900 border-gray-200'}`}>
@@ -43,7 +43,7 @@ export default function SidebarFeed() {
                     }`}
                 >
                   <Icon size={20} />
-                  <span>{link.name}</span>
+                  <span> {t(link.name)}</span>
                   {link.badge && !isActive && (
                     <span className="absolute right-4 w-2 h-2 bg-rose-500 rounded-full" />
                   )}
@@ -80,7 +80,7 @@ export default function SidebarFeed() {
 
       <div className="pt-4">
         <button className="w-full py-3 bg-rose-500 hover:bg-rose-600 text-white font-semibold rounded-xl transition-colors duration-200 shadow-lg shadow-rose-500/20">
-          Post a Vibe
+          {t('postAVibe')}
         </button>
       </div>
     </aside>
