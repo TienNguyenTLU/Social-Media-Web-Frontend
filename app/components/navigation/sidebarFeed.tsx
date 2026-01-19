@@ -21,7 +21,6 @@ export default function SidebarFeed() {
   return (
     <aside className={`w-64 h-screen p-6 flex flex-col font-poppins border-r transition-colors duration-300
       ${isDark ? 'bg-[#0d0d0d] text-white border-white/5' : 'bg-white text-gray-900 border-gray-200'}`}>
-      {/* Brand */}
       <div className="mb-8 flex gap-3 items-center">
         <DraftingCompass className="text-rose-500" size={28} />
         <p className={`text-xl font-bold tracking-wide ${isDark ? 'text-white' : 'text-gray-900'}`}>Skyline</p>
@@ -54,8 +53,6 @@ export default function SidebarFeed() {
           })}
         </ul>
       </nav>
-
-      {/* Theme Toggle */}
       <div className={`py-4 border-t ${isDark ? 'border-white/10' : 'border-gray-200'}`}>
         <div className="flex items-center justify-between px-2">
           <span className={`text-sm font-medium ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -81,7 +78,6 @@ export default function SidebarFeed() {
         </div>
       </div>
 
-      {/* Post Button */}
       <div className="pt-4">
         <button className="w-full py-3 bg-rose-500 hover:bg-rose-600 text-white font-semibold rounded-xl transition-colors duration-200 shadow-lg shadow-rose-500/20">
           Post a Vibe

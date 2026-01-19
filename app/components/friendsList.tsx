@@ -38,7 +38,6 @@ export default function FriendsList({
     <aside className={`w-96 h-full flex flex-col border-r ${
       isDark ? 'bg-[#0d0d0d] border-white/10' : 'bg-white border-gray-200'
     }`}>
-      {/* Header */}
       <div className={`p-4 border-b ${isDark ? 'border-white/10' : 'border-gray-200'}`}>
         <div className="flex items-center justify-between mb-4">
           <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
@@ -53,7 +52,6 @@ export default function FriendsList({
           </button>
         </div>
 
-        {/* Search Bar */}
         <div className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all ${
           isDark 
             ? 'bg-white/5 border-white/10 focus-within:border-rose-500/50' 
@@ -71,14 +69,12 @@ export default function FriendsList({
           />
         </div>
 
-        {/* Create Group Button */}
         <button className="w-full mt-3 flex items-center justify-center gap-2 px-4 py-3 bg-rose-500 hover:bg-rose-600 text-white font-medium rounded-xl transition-colors">
           <Users size={18} />
           <span>Create Group</span>
         </button>
       </div>
 
-      {/* Conversations List */}
       <div className="flex-1 overflow-y-auto">
         {filteredConversations.length > 0 ? (
           filteredConversations.map((conversation) => (
@@ -91,7 +87,6 @@ export default function FriendsList({
                   : isDark ? 'hover:bg-white/5' : 'hover:bg-gray-50'
               }`}
             >
-              {/* Avatar with Online Status */}
               <div className="relative shrink-0">
                 <div className="w-12 h-12 rounded-full overflow-hidden">
                   <Image
@@ -102,13 +97,11 @@ export default function FriendsList({
                     className="object-cover w-full h-full"
                   />
                 </div>
-                {/* Online/Offline Indicator */}
                 <span className={`absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full border-2 ${
                   isDark ? 'border-[#0d0d0d]' : 'border-white'
                 } ${conversation.user.isOnline ? 'bg-green-500' : 'bg-gray-400'}`} />
               </div>
 
-              {/* Conversation Info */}
               <div className="flex-1 min-w-0 text-left">
                 <div className="flex items-center justify-between mb-1">
                   <span className={`font-semibold text-sm truncate ${

@@ -10,9 +10,7 @@ export default function SignupPage() {
 
   return (
     <main className="relative w-full h-screen flex items-center justify-center p-4 overflow-hidden bg-background-dark antialiased">
-      
-      {/* Background Image Section */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#231018]/90 via-[#231018]/70 to-primary/20 z-10" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#231018]/90 via-[#231018]/70 to-primary/20 z-10" />
       <Image
         src="/Background_Login.png"
         alt="Vibrant city skyline at sunset"
@@ -22,10 +20,7 @@ export default function SignupPage() {
         priority
       />
 
-      {/* Glass Card Container */}
-      <div className="relative z-20 w-full max-w-[440px] flex flex-col backdrop-blur-xs bg-surface-dark/100 border border-white/20 rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10">
-        
-        {/* Header */}
+      <div className="relative z-20 w-full max-w-110 flex flex-col backdrop-blur-xs bg-surface-dark/100 border border-white/20 rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10">
         <div className="flex flex-col items-center text-center mb-8">
           <div className="h-14 w-14 rounded-full bg-white border border-white flex items-center justify-center mb-5 text-primary shadow-[0_0_15px_rgba(244,37,123,0.3)]">
             <DraftingCompass className="text-3xl text-rose-600" />
@@ -38,9 +33,7 @@ export default function SignupPage() {
           </p>
         </div>
 
-          {/* Form */}
           <form className="flex flex-col gap-5 w-full" onSubmit={(e) => e.preventDefault()}>
-            {/* Username */}
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-200 ml-1">Username</label>
               <div className="relative group">
@@ -55,7 +48,6 @@ export default function SignupPage() {
               </div>
             </div>
 
-            {/* Email */}
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-200 ml-1">Email</label>
               <div className="relative group">
@@ -70,7 +62,6 @@ export default function SignupPage() {
               </div>
             </div>
 
-            {/* Password */}
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-200 ml-1">Password</label>
               <div className="relative group">
@@ -92,7 +83,6 @@ export default function SignupPage() {
               </div>
             </div>
 
-            {/* Terms */}
             <div className="flex items-start gap-3 px-2 pt-1">
               <input 
                 id="terms" 
@@ -109,14 +99,12 @@ export default function SignupPage() {
             </button>
           </form>
 
-          {/* Divider */}
           <div className="flex items-center gap-4 py-6">
             <div className="h-px bg-white/10 flex-1" />
             <span className="text-sm text-gray-400 font-medium whitespace-nowrap">Or sign up with</span>
             <div className="h-px bg-white/10 flex-1" />
           </div>
 
-          {/* Social Logins */}
           <div className="grid grid-cols-2 gap-4">
             <button className="flex items-center justify-center h-12 rounded-full bg-surface-dark border border-white hover:bg-input-bg hover:border-primary/50 transition-all gap-2 group">
               <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -130,7 +118,6 @@ export default function SignupPage() {
             </button>
           </div>
 
-          {/* Footer */}
           <div className="mt-8 text-center">
             <p className="text-gray-400 text-sm">
               Already have an account? <Link href="/login" className="text-primary font-bold hover:underline ml-1">Login</Link>

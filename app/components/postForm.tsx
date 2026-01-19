@@ -38,7 +38,6 @@ export default function PostComposer() {
 
   return (
     <>
-      {/* Compact Input Trigger */}
       <div 
         onClick={() => setIsModalOpen(true)}
         className={`${isDark ? 'bg-[#221017]/70 border-white/10 hover:border-white/20' : 'bg-white border-gray-200 hover:border-gray-300'} backdrop-blur-xl border rounded-2xl p-4 shadow-xl cursor-pointer transition-all`}
@@ -62,7 +61,6 @@ export default function PostComposer() {
         </div>
       </div>
 
-      {/* Create Post Modal */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
@@ -79,7 +77,6 @@ export default function PostComposer() {
               onClick={(e) => e.stopPropagation()}
               className={`${isDark ? 'bg-[#1a1a1f] border-white/10' : 'bg-white border-gray-200'} border rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl`}
             >
-              {/* Modal Header */}
               <div className={`p-4 border-b ${isDark ? 'border-white/10' : 'border-gray-200'} flex items-center justify-between`}>
                 <h2 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Create Post</h2>
                 <button 
@@ -90,7 +87,6 @@ export default function PostComposer() {
                 </button>
               </div>
 
-              {/* Modal Body */}
               <div className="p-4">
                 <div className="flex gap-4">
                   <div className="relative w-10 h-10 shrink-0">
@@ -106,7 +102,7 @@ export default function PostComposer() {
                       ref={textareaRef}
                       value={content}
                       onChange={(e) => setContent(e.target.value)}
-                      className={`w-full bg-transparent border-none outline-none focus:outline-none resize-none min-h-[120px] text-lg py-1 leading-relaxed ${isDark ? 'text-white placeholder:text-white/40' : 'text-gray-900 placeholder:text-gray-400'}`}     
+                      className={`w-full bg-transparent border-none outline-none focus:outline-none resize-none min-h-30 text-lg py-1 leading-relaxed ${isDark ? 'text-white placeholder:text-white/40' : 'text-gray-900 placeholder:text-gray-400'}`}     
                       placeholder="What's the vibe?"
                       autoFocus
                     />
@@ -114,7 +110,6 @@ export default function PostComposer() {
                 </div>
               </div>
 
-              {/* Modal Footer */}
               <div className={`p-4 border-t ${isDark ? 'border-white/10' : 'border-gray-200'}`}>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-1">

@@ -1,11 +1,10 @@
-import { DraftingCompass, FacebookIcon, Github, GithubIcon, TwitterIcon } from "lucide-react";
+import { DraftingCompass, FacebookIcon, GithubIcon, TwitterIcon } from "lucide-react";
 
 export default function FooterLandingpage() {
   return (
     <footer className="bg-white border-t border-white/10 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <DraftingCompass className="text-orange-500 text-3xl" />
@@ -14,7 +13,6 @@ export default function FooterLandingpage() {
             <p className="text-gray-400 text-sm">Connect with the world without compromising your data.</p>
           </div>
 
-          {/* Product */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Product</h3>
             <ul className="space-y-2 text-sm">
@@ -25,7 +23,6 @@ export default function FooterLandingpage() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Company</h3>
             <ul className="space-y-2 text-sm">
@@ -36,7 +33,6 @@ export default function FooterLandingpage() {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Legal</h3>
             <ul className="space-y-2 text-sm">
@@ -48,7 +44,6 @@ export default function FooterLandingpage() {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             <p>© 2026 Skyline Social Inc. All rights reserved.</p>

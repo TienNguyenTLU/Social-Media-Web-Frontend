@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 
 interface DarkModeContextType {
   isDark: boolean;
@@ -15,7 +15,6 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(true);
   const [mounted, setMounted] = useState(false);
 
-  // Initialize theme from localStorage or system preference
   useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem('theme');
@@ -26,26 +25,20 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Apply theme changes to document
   useEffect(() => {
     if (!mounted) return;
-    
+    const root = document.documentElement;
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
   }, [isDark, mounted]);
 
-  const toggleTheme = () => {
-    setIsDark(prev => !prev);
-  };
-
-  const setDarkMode = (dark: boolean) => {
-    setIsDark(dark);
-  };
+  const toggleTheme = useCallback(() => setIsDark(prev => !prev), []);
+  const setDarkMode = useCallback((dark: boolean) => setIsDark(dark), []);
 
   return (
     <DarkModeContext.Provider value={{ isDark, mounted, toggleTheme, setDarkMode }}>
@@ -56,7 +49,7 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
 
 export function useDarkMode() {
   const context = useContext(DarkModeContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useDarkMode must be used within a DarkModeProvider');
   }
   return context;

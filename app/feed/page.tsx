@@ -12,14 +12,11 @@ export default function FeedPage() {
 
   return (
     <div className={`w-full min-h-screen flex transition-colors duration-300 ${isDark ? 'bg-[#0a0a0a] text-white' : 'bg-gray-50 text-gray-900'}`}>
-      {/* Sidebar */}
       <nav className="fixed top-0 left-0 h-screen z-40">
         <SidebarFeed />
       </nav>
 
-      {/* Main Content */}
       <main className="ml-70 mr-80 flex-1 w-auto mx-auto px-4 py-6">
-        {/* Navigation Tabs */}
         <div className={`flex gap-0 border-b ${isDark ? 'border-white/10' : 'border-gray-200'} mb-6`}>
           <button 
             onClick={() => setActiveTab('for-you')}
@@ -50,12 +47,10 @@ export default function FeedPage() {
           </button>
         </div>
 
-        {/* Post Composer */}
         <div className="mb-6">
           <PostComposer />
         </div>
 
-        {/* Feed Posts */}
         <div className="flex flex-col gap-6">
           {activeTab === 'for-you' ? (
             <>

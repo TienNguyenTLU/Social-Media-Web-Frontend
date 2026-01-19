@@ -7,8 +7,6 @@ import SidebarFeed from '@/app/components/navigation/sidebarFeed';
 import PostCard from '@/app/components/PostCard';
 import { useDarkMode } from '@/app/context/DarkModeContext';
 import SidebarFeedRight from '../components/navigation/sidebarFeedRight';
-
-// Top categories with images
 const topCategories = [
   { id: 1, name: 'Travel', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop', posts: 12500 },
   { id: 2, name: 'Food', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop', posts: 9800 },
@@ -17,15 +15,11 @@ const topCategories = [
   { id: 5, name: 'Art', image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=400&h=300&fit=crop', posts: 6500 },
   { id: 6, name: 'Music', image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop', posts: 5400 },
 ];
-
-// All categories list
 const allCategories = [
   'All', 'Travel', 'Food', 'Fashion', 'Technology', 'Art', 'Music', 
   'Sports', 'Gaming', 'Photography', 'Fitness', 'Nature', 'Movies',
   'Books', 'DIY', 'Pets', 'Beauty', 'Science', 'Education', 'News'
 ];
-
-// Trending hashtags
 const trendingHashtags = [
   { tag: 'wanderlust', posts: '125K' },
   { tag: 'foodie', posts: '98K' },
@@ -33,8 +27,6 @@ const trendingHashtags = [
   { tag: 'techlife', posts: '76K' },
   { tag: 'artistsonrise', posts: '65K' },
 ];
-
-// Sample posts data
 const samplePosts = [
   {
     id: 1,
@@ -91,19 +83,17 @@ const samplePosts = [
     stats: { likes: 2134, comments: 178, shares: 89 }
   },
 ];
-
 export default function ExplorePage() {
   const { isDark } = useDarkMode();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showHashtags, setShowHashtags] = useState(false);
 
-  // Filter posts based on selected category
   const filteredPosts = selectedCategory === 'All' 
     ? samplePosts 
-    : samplePosts.filter(post => post.category === selectedCategory);
+      : samplePosts.filter(post => post.category === selectedCategory);
 
-  // Filter based on search query
+    // Filter based on search query
   const searchFilteredPosts = searchQuery 
     ? filteredPosts.filter(post => 
         post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -114,14 +104,10 @@ export default function ExplorePage() {
 
   return (
     <div className={`w-full min-h-screen flex transition-colors duration-300 ${isDark ? 'bg-[#0a0a0a] text-white' : 'bg-gray-50 text-gray-900'}`}>
-      {/* Sidebar */}
       <nav className="fixed top-0 left-0 h-screen z-40">
         <SidebarFeed />
       </nav>
-
-      {/* Main Content */}
       <main className="ml-64 flex-1 w-auto mx-auto px-6 py-8">
-        {/* Title */}
         <div className="mb-8">
           <h1 className={`text-4xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Explore your world
@@ -130,8 +116,6 @@ export default function ExplorePage() {
             Discover trending content and connect with new communities
           </p>
         </div>
-
-        {/* Search Bar */}
         <div className="mb-8 relative">
           <div className={`flex items-center gap-3 px-5 py-4 rounded-2xl border transition-all duration-200 ${
             isDark 
@@ -158,8 +142,6 @@ export default function ExplorePage() {
               </button>
             )}
           </div>
-
-          {/* Trending Hashtags Dropdown */}
           {showHashtags && !searchQuery && (
             <div className={`absolute top-full left-0 right-0 mt-2 rounded-2xl border overflow-hidden z-50 ${
               isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-white border-gray-200 shadow-xl'
@@ -199,16 +181,12 @@ export default function ExplorePage() {
             </div>
           )}
         </div>
-
-        {/* Backdrop to close hashtags */}
         {showHashtags && !searchQuery && (
           <div 
             className="fixed inset-0 z-40" 
             onClick={() => setShowHashtags(false)}
           />
         )}
-
-        {/* Top Categories with Images */}
         <div className="mb-8">
           <h2 className={`text-xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Top Categories
@@ -239,8 +217,6 @@ export default function ExplorePage() {
             ))}
           </div>
         </div>
-
-        {/* List Categories (Row, title only) */}
         <div className="mb-8">
           <h2 className={`text-xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             All Categories
@@ -263,8 +239,6 @@ export default function ExplorePage() {
             ))}
           </div>
         </div>
-
-        {/* Posts Section */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
@@ -274,8 +248,6 @@ export default function ExplorePage() {
               {searchFilteredPosts.length} {searchFilteredPosts.length === 1 ? 'post' : 'posts'}
             </span>
           </div>
-
-          {/* Posts List */}
           <div className="flex flex-col gap-6">
             {searchFilteredPosts.length > 0 ? (
               searchFilteredPosts.map((post) => (

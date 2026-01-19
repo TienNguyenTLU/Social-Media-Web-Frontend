@@ -1,10 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+
 import { DraftingCompass } from 'lucide-react';
 import Link from 'next/link';
-export default function Navbar() {
-  const [isDark, setIsDark] = useState(false);
 
+export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/60 to-transparent transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

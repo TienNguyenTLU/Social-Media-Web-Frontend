@@ -4,7 +4,7 @@ import SidebarFeed from '@/app/components/navigation/sidebarFeed';
 import FriendsList, { Conversation } from '@/app/components/friendsList';
 import MessagePanel, { Message } from '@/app/components/messagePanel';
 import { useDarkMode } from '@/app/context/DarkModeContext';
-// Mẫu cuộc trò chuyện
+
 const conversations: Conversation[] = [
   {
     id: 1,
@@ -100,7 +100,6 @@ const conversations: Conversation[] = [
   },
 ];
 
-// Mẫu tin nhắn cho cuộc trò chuyện được chọn
 const sampleMessages: Message[] = [
   {
     id: 1,

@@ -80,7 +80,7 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
 
   const CommentItem = ({ comment, isReply = false }: { comment: Comment; isReply?: boolean }) => (
     <div className={`flex gap-3 ${isReply ? 'ml-10 mt-3' : ''}`}>
-      <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+      <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0">
         <Image src={comment.user.avatar} alt={comment.user.name} fill className="object-cover" />
       </div>
       <div className="flex-1 min-w-0">
@@ -103,7 +103,6 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
   return (
     <>
       <div className={`${isDark ? 'bg-[#221017]/40' : 'bg-white'} backdrop-blur-md border ${isDark ? 'border-white/10 hover:border-white/20' : 'border-gray-200 hover:border-gray-300'} rounded-2xl overflow-hidden transition-all`}>
-        {/* Header */}
         <div className={`p-4 flex justify-between items-center border-b ${isDark ? 'border-white/5' : 'border-gray-100'}`}>
           <div className="flex items-center gap-3">
             <div className={`relative w-10 h-10 rounded-full ring-2 ring-primary/20 ring-offset-2 ${isDark ? 'ring-offset-[#0f0f12]' : 'ring-offset-white'}`}>
@@ -129,11 +128,8 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
           </button>
         </div>
 
-        {/* Main Content Area */}
         <div className="flex flex-col lg:flex-row">
-          {/* Left Side - Image & Caption */}
           <div className="lg:w-1/2 p-4">
-            {/* Image */}
             {image && (
               <div className={`relative aspect-square w-full rounded-xl overflow-hidden ${isDark ? 'bg-white/5' : 'bg-gray-100'}`}>
                 <Image
@@ -145,14 +141,11 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
               </div>
             )}
             
-            {/* Caption */}
             <div className="mt-3">
               <p className={`text-sm leading-relaxed ${isDark ? 'text-white/90' : 'text-gray-800'}`}>{content}</p>
             </div>
 
-            {/* Action Buttons - Below image on mobile, right of image on desktop */}
             <div className={`flex items-center gap-6 mt-4 pt-4 border-t ${isDark ? 'border-white/5' : 'border-gray-100'}`}>
-              {/* Like Button */}
               <button 
                 onClick={() => setIsLiked(!isLiked)}
                 className={`flex items-center gap-2 transition-colors ${isLiked ? 'text-rose-500' : isDark ? 'text-white/60 hover:text-rose-500' : 'text-gray-500 hover:text-rose-500'}`}
@@ -163,7 +156,6 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
                 <span className="text-sm font-semibold">{isLiked ? stats.likes + 1 : stats.likes}</span>
               </button>
 
-              {/* Comment Button */}
               <button 
                 onClick={() => setIsModalOpen(true)}
                 className={`flex items-center gap-2 ${isDark ? 'text-white/60' : 'text-gray-500'} hover:text-blue-400 transition-colors`}
@@ -172,13 +164,11 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
                 <span className="text-sm font-semibold">{stats.comments}</span>
               </button>
 
-              {/* Share Button */}
               <button className={`flex items-center gap-2 ${isDark ? 'text-white/60' : 'text-gray-500'} hover:text-green-400 transition-colors`}>
                 <Share2 size={22} />
                 <span className="text-sm font-semibold">{stats.shares}</span>
               </button>
 
-              {/* Bookmark */}
               <button 
                 onClick={() => setIsBookmarked(!isBookmarked)}
                 className={`ml-auto transition-colors ${isBookmarked ? 'text-amber-500' : isDark ? 'text-white/40 hover:text-amber-500' : 'text-gray-400 hover:text-amber-500'}`}
@@ -188,9 +178,7 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
             </div>
           </div>
 
-          {/* Right Side - Comments Section */}
-          <div className={`lg:w-1/2 border-t lg:border-t-0 lg:border-l ${isDark ? 'border-white/5' : 'border-gray-100'} flex flex-col max-h-[400px] lg:max-h-[500px]`}>
-            {/* Comments List */}
+          <div className={`lg:w-1/2 border-t lg:border-t-0 lg:border-l ${isDark ? 'border-white/5' : 'border-gray-100'} flex flex-col max-h-100 lg:max-h-125`}>
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {comments.slice(0, 3).map(comment => (
                 <CommentItem key={comment.id} comment={comment} />
@@ -205,13 +193,12 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
               )}
             </div>
 
-            {/* Comment Input */}
             <div className={`p-4 border-t ${isDark ? 'border-white/5' : 'border-gray-100'}`}>
               <div 
                 onClick={() => setIsModalOpen(true)}
                 className={`flex items-center gap-3 ${isDark ? 'bg-white/5 hover:bg-white/10' : 'bg-gray-100 hover:bg-gray-200'} rounded-full px-4 py-3 cursor-pointer transition-colors`}
               >
-                <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+                <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0">
                   <Image src={user.avatar} alt="Your avatar" fill className="object-cover" />
                 </div>
                 <span className={`text-sm ${isDark ? 'text-white/40' : 'text-gray-400'}`}>Write a comment...</span>
@@ -222,7 +209,6 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
         </div>
       </div>
 
-      {/* Comment Modal */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
@@ -239,7 +225,6 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
               onClick={(e) => e.stopPropagation()}
               className={`${isDark ? 'bg-[#1a1a1f] border-white/10' : 'bg-white border-gray-200'} border rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden`}
             >
-              {/* Modal Header */}
               <div className={`p-4 border-b ${isDark ? 'border-white/10' : 'border-gray-200'} flex items-center justify-between`}>
                 <h2 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Comments</h2>
                 <button 
@@ -250,17 +235,15 @@ export default function PostCard({ user, timestamp, content, image, stats, comme
                 </button>
               </div>
 
-              {/* Modal Comments List */}
               <div className="flex-1 overflow-y-auto p-4 space-y-4">
                 {comments.map(comment => (
                   <CommentItem key={comment.id} comment={comment} />
                 ))}
               </div>
 
-              {/* Modal Comment Input */}
               <div className={`p-4 border-t ${isDark ? 'border-white/10' : 'border-gray-200'}`}>
                 <div className="flex items-center gap-3">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
                     <Image src={user.avatar} alt="Your avatar" fill className="object-cover" />
                   </div>
                   <input

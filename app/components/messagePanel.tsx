@@ -53,12 +53,10 @@ export default function MessagePanel({
     }`}>
       {selectedConversation ? (
         <>
-          {/* Top Bar */}
           <div className={`px-4 py-3 flex items-center justify-between border-b ${
             isDark ? 'bg-[#0d0d0d] border-white/10' : 'bg-white border-gray-200'
           }`}>
             <div className="flex items-center gap-3">
-              {/* Avatar */}
               <div className="relative">
                 <div className="w-10 h-10 rounded-full overflow-hidden">
                   <Image
@@ -74,7 +72,6 @@ export default function MessagePanel({
                 } ${selectedConversation.user.isOnline ? 'bg-green-500' : 'bg-gray-400'}`} />
               </div>
 
-              {/* Name & Status */}
               <div>
                 <h2 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   {selectedConversation.user.name}
@@ -89,7 +86,6 @@ export default function MessagePanel({
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex items-center gap-1">
               <button className={`p-2.5 rounded-xl transition-colors ${
                 isDark ? 'hover:bg-white/10 text-white/70 hover:text-white' : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
@@ -109,7 +105,6 @@ export default function MessagePanel({
             </div>
           </div>
 
-          {/* Messages Area */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((message) => (
               <div
@@ -156,7 +151,6 @@ export default function MessagePanel({
             ))}
           </div>
 
-          {/* Message Input */}
           <div className={`p-4 border-t ${isDark ? 'border-white/10' : 'border-gray-200'}`}>
             <div className={`flex items-center gap-2 px-4 py-2 rounded-2xl ${
               isDark ? 'bg-white/5' : 'bg-white border border-gray-200'
@@ -201,7 +195,6 @@ export default function MessagePanel({
           </div>
         </>
       ) : (
-        /* No Conversation Selected */
         <div className="flex-1 flex flex-col items-center justify-center p-8">
           <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-4 ${
             isDark ? 'bg-white/5' : 'bg-gray-100'

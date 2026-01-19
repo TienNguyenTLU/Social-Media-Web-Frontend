@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   return (
     <main className="relative w-full h-screen flex items-center justify-center p-4 overflow-hidden bg-background-dark antialiased">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#231018]/90 via-[#231018]/70 to-primary/20 z-10" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#231018]/90 via-[#231018]/70 to-primary/20 z-10" />
         <Image
           src="/Background_Login.png"
           alt="Cyberpunk skyline"
@@ -19,7 +19,7 @@ export default function LoginPage() {
           priority
         />
 
-      <div className="relative z-20 w-full max-w-[440px] flex flex-col backdrop-blur-xs bg-surface-dark/100 border border-white/20 rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10">
+      <div className="relative z-20 w-full max-w-110 flex flex-col backdrop-blur-xs bg-surface-dark/100 border border-white/20 rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-10">
         <div className="flex flex-col items-center text-center mb-8">
           <div className="h-14 w-14 rounded-full bg-white border border-white flex items-center justify-center mb-5 text-primary shadow-[0_0_15px_rgba(244,37,123,0.3)]">
             <DraftingCompass className="text-3xl text-rose-600" />
@@ -28,14 +28,12 @@ export default function LoginPage() {
           <p className="text-gray-300 text-base font-normal">Ready to tap in? Enter your deets below.</p>
         </div>
 
-        {/* Form Section */}
         <form className="flex flex-col gap-5 w-full" onSubmit={(e) => e.preventDefault()}>
-          {/* Email Input */}
           <div className="flex flex-col gap-2">
             <label className="text-sm font-medium text-gray-200 ml-1">Email</label>
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-text-placeholder group-focus-within:text-primary transition-colors">
-                <Mail className="text-white" /  >
+                <Mail className="text-white" />
               </div>
               <input 
                 type="email" 
@@ -45,7 +43,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Password Input */}
           <div className="flex flex-col gap-2">
             <label className="text-sm font-medium text-gray-200 ml-1">Password</label>
             <div className="relative group">
@@ -72,26 +69,22 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Primary Action Button */}
           <button className="w-full bg-rose-600 hover:bg-primary/90 text-white font-bold h-14 rounded-full shadow-[0_4px_20px_rgba(244,37,123,0.4)] hover:shadow-[0_6px_25px_rgba(244,37,123,0.6)] transition-all transform active:scale-95 flex items-center justify-center gap-2 mt-2">
             Slide In <span className="material-symbols-outlined text-lg"><LogIn /></span>
           </button>
         </form>
 
-        {/* Divider */}
         <div className="flex items-center gap-4 py-6">
           <div className="h-px bg-white/10 flex-1" />
           <span className="text-sm text-gray-400 font-medium whitespace-nowrap">Or vibe with</span>
           <div className="h-px bg-white/10 flex-1" />
         </div>
 
-        {/* Social Logins */}
         <div className="grid grid-cols-2 gap-4">
           <SocialButton icon="google" label="Google" />
           <SocialButton icon="apple" label="Apple" isApple />
         </div>
 
-        {/* Footer */}
         <div className="mt-8 text-center">
           <p className="text-gray-400 text-sm">
             New here? <Link href="/signup" className="text-primary font-bold hover:underline ml-1">Join the Fam</Link>
